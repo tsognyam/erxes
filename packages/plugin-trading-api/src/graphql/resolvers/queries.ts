@@ -1,7 +1,7 @@
 import { requireLogin } from '@erxes/api-utils/src/permissions';
 
-import { Tradings } from '../../models';
-import { prisma } from '../../database';
+import { Tradings } from '../../models/models';
+import { prisma } from '../../configs';
 
 const tradingQueries = {
   tradings(_root) {

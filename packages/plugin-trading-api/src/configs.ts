@@ -2,12 +2,13 @@ import typeDefs from './graphql/typeDefs';
 import resolvers from './graphql/resolvers';
 
 import { initBroker } from './messageBroker';
+import { PrismaClient } from '@prisma/client';
 
 export let mainDb;
 export let debug;
 export let graphqlPubsub;
 export let serviceDiscovery;
-export let mysqlDb;
+export let prisma;
 export default {
   name: 'trading',
   graphql: async sd => {
@@ -25,7 +26,7 @@ export default {
   },
   onServerInit: async options => {
     mainDb = options.db;
-
+    prisma = new PrismaClient();
     initBroker(options.messageBrokerClient);
 
     graphqlPubsub = options.pubsubClient;

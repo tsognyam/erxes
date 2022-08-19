@@ -1,6 +1,6 @@
 import { requireLogin } from '@erxes/api-utils/src/permissions';
-import { Tradings, ITrading } from '../../models';
-import { prisma } from '../../database';
+import { Tradings, ITrading } from '../../models/models';
+import { prisma } from '../../configs';
 const tradingMutations = {
   /**
    * Creates a new trading
